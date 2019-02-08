@@ -44,14 +44,21 @@ bool LinkedList<T>::search(T value) const
 	/** TODO
 		Fix this method
 	*/
-	while (temp->getValue() != value) {
-		if (temp == nullptr) {
-			return(isFound);
+	if (temp = nullptr) {
+		isFound = false;
+	}
+	else {
+		while (temp->getValue() != value) {
+			if (temp->getNext() == nullptr) {
+				isFound = false;
+				return(isFound);
+			}
+			temp = temp->getNext();
+
 		}
-		temp->getNext();
+		isFound = true;
 
 	}
-	isFound = true;
 	return(isFound);
 }
 
