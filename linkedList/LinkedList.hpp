@@ -115,7 +115,7 @@ bool LinkedList<T>::removeBack()
 	*/
 	lastNode = m_front;
 	if (lastNode == nullptr) {
-		isRemoved = true;
+		isRemoved = false;
 	}
 	else if (lastNode->getNext() == nullptr) {
 		delete lastNode;
@@ -131,8 +131,9 @@ bool LinkedList<T>::removeBack()
 		}
 		delete lastNode;
 		m_size--;
+		secondintoLast.setNext(nullptr);
 		isRemoved = true;
-		
+
 	}
 	return(isRemoved);
 }
